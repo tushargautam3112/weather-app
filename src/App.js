@@ -29,19 +29,29 @@ function App() {
     };
 
     fetchWeather();
+    // console.log(weather)
   }, [query, units]);
 
-  const formatBackground = () => {
-    if (!weather) return "from-cyan-700 to-blue-700";
-    const threshold = units === "metric" ? 20 : 60;
-    if (weather.temp <= threshold) return "from-cyan-700 to-blue-700";
+  const colorBackground = () => {
 
-    return "from-yellow-700 to-orange-700";
+    const threshold = units === "metric" ? 25 : 75;
+    if (!weather) return "from-white to-white";
+    else{
+      if(weather.details === 'Rain') return "from-gray-700 to-gray-700"
+      else if(weather.details === 'Clouds') return "from-orange-800 to-gray-700"
+      else if(weather.details === 'Drizzle') return "from-green-600 to-blue-500"
+      else if(weather.details === 'Haze') return "from-rose-400 to-pink-900"
+      else if(weather.details === 'Clear') {
+        if (weather.temp <= threshold) return "from-green-500 to-blue-700";
+        else return "from-orange-700 to-yellow-800"
+      }
+    else return "from-cyan-700 to-blue-700"
+    }
   };
 
   return (
     <div
-      className={`py-5 px-4 md:px-[10vw] bg-gradient-to-br h-fit ${formatBackground()}`}
+      className={`py-5 px-4 md:px-[10vw] bg-gradient-to-br h-fit ${colorBackground()}`}
     >
       <SelectCity setQuery={setQuery} />
       <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
@@ -56,7 +66,7 @@ function App() {
         </div>
       )}
 
-      <ToastContainer autoClose={5000} theme="dark" newestOnTop={true} />
+      <ToastContainer autoClose={4000} theme="dark" newestOnTop={true} limit={2}/>
     </div>
   );
 }

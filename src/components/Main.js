@@ -70,30 +70,30 @@ function Main({
           
 
           
-          <p className="flex bg-opacity-50 p-2 rounded-lg bg-black m-1 w-[42vw] md:w-[180px] text-center">
+          <div className="flex bg-opacity-50 p-2 rounded-lg bg-black m-1 w-[42vw] md:w-[180px] text-center">
           <UilSunset />
             <div className="ml-1">
             Set:{" "}
               {formatToLocalTime(sunset, timezone, "hh:mm a")}
             </div>
-          </p>
+          </div>
           
         </div>
 
         <div className="flex -translate-x-1">
 
-        <p className="flex bg-opacity-50 p-2 rounded-lg bg-black m-1 w-[42vw] md:w-[180px] text-center">
+        <div className="flex bg-opacity-50 p-2 rounded-lg bg-black m-1 w-[42vw] md:w-[180px] text-center">
         <UilSun />
           
           <div className="ml-1">High:{" "}{`${temp_max.toFixed()}°`}</div>
-        </p>
+        </div>
 
 
         
-        <p className="flex bg-opacity-50 p-2 rounded-lg bg-black m-1 w-[42vw] md:w-[180px] text-center">
+        <div className="flex bg-opacity-50 p-2 rounded-lg bg-black m-1 w-[42vw] md:w-[180px] text-center">
         <UilSun />
           <div className="ml-1">Low:{" "}{`${temp_min.toFixed()}°`}</div>
-        </p>
+        </div>
         </div>
       </div>
     </div>
