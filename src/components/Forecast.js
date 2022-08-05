@@ -10,7 +10,7 @@ function Forecast({ title, items }) {
       </div>
       <hr className="my-2 border-[#333333] h-2 opacity-50" />
 
-      <div className="flex flex-row items-center justify-between text-white overflow-scroll">
+      <div className="hidescroll flex flex-row items-center justify-between text-white overflow-scroll">
         {items.map((item, index) => (
           <div
             key={index}

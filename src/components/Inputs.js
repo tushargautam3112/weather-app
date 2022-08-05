@@ -44,7 +44,7 @@ function Inputs({ setQuery, units, setUnits }) {
           onChange={(e) => setCity(e.currentTarget.value)}
           onKeyDown={handleSearchEnter}
           type="text"
-          placeholder="Search for a loacation...."
+          placeholder="Search for a location...."
           className="text-lg p-3 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase rounded-lg"
         />
         <UilSearch

@@ -9,4 +9,7 @@
     html {
         font-family: 'Montserrat', sans-serif;
     }
+    .hidescroll::-webkit-scrollbar {
+        display: none;
+    }
 }
